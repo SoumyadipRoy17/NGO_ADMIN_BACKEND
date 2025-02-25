@@ -13,7 +13,7 @@ const app = express();
 const port = process.env.PORT || 4000;
 app.use(express.json());
 //routes
-app.get("/api/v1", (req, res) => {
+app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
