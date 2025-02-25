@@ -33,25 +33,25 @@ const userSchema = new mongoose.Schema(
     favourites: [
       {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "book",
+        ref: "Book",
       },
     ],
     cart: [
       {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "book",
+        ref: "Book",
       },
     ],
     orders: [
       {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "orders",
+        ref: "Order",
       },
     ],
   },
   { timestamps: true }
 );
 
-const User = mongoose.model("user", userSchema);
+const User = mongoose.model("User", userSchema);
 
 export default User;
