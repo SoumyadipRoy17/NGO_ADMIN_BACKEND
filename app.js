@@ -4,6 +4,7 @@ dotenv.config();
 import connect from "./connections/conn.js";
 
 import userRoutes from "./routes/userRoutes.js";
+import bookRoutes from "./routes/bookRoutes.js";
 
 //connection to MongoDB
 connect();
@@ -17,6 +18,7 @@ app.get("/api/v1", (req, res) => {
 });
 
 app.use("/api/v1/users", userRoutes);
+app.use("/api/v1/books", bookRoutes);
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
