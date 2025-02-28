@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 dotenv.config();
 import connect from "./connections/conn.js";
+import cors from "cors";
 
 import userRoutes from "./routes/userRoutes.js";
 import bookRoutes from "./routes/bookRoutes.js";
@@ -11,8 +12,13 @@ import orderRoutes from "./routes/orderRoutes.js";
 
 //connection to MongoDB
 connect();
-const app = express();
 
+const app = express();
+app.use(
+  cors({
+    origin: "https://ngo-admin-backend.vercel.app/api/v1/",
+  })
+);
 const port = process.env.PORT || 4000;
 app.use(express.json());
 //routes
