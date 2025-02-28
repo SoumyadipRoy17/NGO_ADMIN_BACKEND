@@ -16,7 +16,7 @@ connect();
 const app = express();
 app.use(
   cors({
-    origin: "https://ngo-admin-backend.vercel.app/api/v1/",
+    origin: "*",
   })
 );
 const port = process.env.PORT || 4000;
